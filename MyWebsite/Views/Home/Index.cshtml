@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+    var modules = ViewBag.Modules as string[];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyWebsite</title>
+    <style>
+        table, th, td {
+            border: solid 1px gray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Module Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < modules.Length; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@modules[i]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
